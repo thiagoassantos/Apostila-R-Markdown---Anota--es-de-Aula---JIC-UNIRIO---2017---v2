@@ -162,6 +162,7 @@ um sinal de crase, sem quebras de linha no texto. (Por exemplo, `R` vs. R.)
 3. Isso pode ser útil quando você perde a contagem ou não atualiza os números sozinho ao editar. (Consulte atentamente o arquivo .Rmd para este item.)
 
     a. Você pode criar sub-listas de listas enumeradas com letras para cada sub-item.
+    
     b. No entanto, atente-se para a sintaxe e organização do seu código.
 
 ### Título, Autor, Data, Formato de saída, Índice
