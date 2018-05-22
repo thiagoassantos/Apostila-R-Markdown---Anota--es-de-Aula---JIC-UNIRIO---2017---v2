@@ -162,7 +162,7 @@ um sinal de crase, sem quebras de linha no texto. (Por exemplo, `R` vs. R.)
 3. Isso pode ser útil quando você perde a contagem ou não atualiza os números sozinho ao editar. (Consulte atentamente o arquivo .Rmd para este item.)
 
     a. Você pode criar sub-listas de listas enumeradas com letras para cada sub-item.
-    
+
     b. No entanto, atente-se para a sintaxe e organização do seu código.
 
 ### Título, Autor, Data, Formato de saída, Índice
@@ -295,12 +295,11 @@ Você pode atribuir nomes aos pedaços de código logo após a criação, como
 
 ### Alterando tamanhos de imagem e alinhamentos
 
-Há muitas opções para ajustar a inserção das figuras que o
-R produz. `fig.align` controla o **alinhamento** horizontal (esquerda, direita, ou centro).
+Há muitas opções para ajustar a inserção das figuras que o R produz. `fig.align` controla o **alinhamento** horizontal (esquerda, direita ou centro).
 
-Ao produzir PDF, as opções `out.height` e` out.width` permitem que você especifique a altura ou largura desejada da figura em polegadas, centímetros ou múltiplos de comprimentos pré-definidos (do `LaTeX`). Então, por exemplo, ` ``` r,
+Ao produzir PDF, as opções `out.height` e `out.width` permitem que você especifique a altura ou largura desejada da figura em polegadas, centímetros ou múltiplos de comprimentos pré-definidos (`LaTeX`). Então, por exemplo, ` ``` r,
 out.height = "3in"} ` força a imagem a 3 polegadas de altura, enquanto que ` ```r,
-out.width = "0.48 \\ textwidth"} ` força a largura da imagem a ser um pouco menos do que metade da largura total do texto na página (de modo que duas dessas imagens se encaixam lado a lado). As próximas figuras ilustram isso.
+out.width = "0.48 \\ textwidth"} ` força a largura da imagem a ser um pouco menos do que metade da largura total do texto na página (de modo que duas dessas imagens se encaixem lado a lado). As próximas figuras ilustram isso.
 
 ```{r, echo=FALSE, fig.width=3, fig.align="center"}
 plot(Hwt ~ Bwt, data=cats, xlab="Body weight (kg)",
@@ -311,9 +310,8 @@ plot(Hwt ~ Bwt, data=cats, log="xy", xlab="Body weight (kg)",
 
 ### Tabelas
 
-A impressão padrão de matrizes, tabelas, etc., do R Markdown é, francamente,
-feia. O pacote `knitr` contém um comando muito básico, `kable`, que irá
-formatar uma matriz ou quadro de dados mais legalmente para exibição.
+A impressão padrão de matrizes e tabelas do R Markdown é bem simplória.
+O pacote `knitr` contém um comando muito básico, `kable`, que formatará uma matriz ou quadro de dados mais elegante para exibição.
 
 Compare:
 
@@ -331,9 +329,9 @@ kable(coefficients(summary(lm(Hwt ~ Bwt, data=cats))))
 --- Pois é, os padrões do R imprimem um número louco de casas decimais, mas
 este não é o momento de discutir dígitos significativos, ou a função `signif`.
 
-### "Caching" de pedaços de código (re-executando somente com modificações)
+### "Caching" de pedaços de código (re-executando somente o que foi modificado)
 
-Por padrão, o R Markdown executará de novo seu código toda vez que você renderizar o seu documento. Se algum código do seu código for lento, isso pode aumentar ainda mais o tempo de renderização.
+Por padrão, o R Markdown executará seu código de novo toda vez que você renderizar o documento. E se algum procedimento do seu código for consideravelmente custoso (lento), isso pode aumentar ainda mais o tempo de renderização.
 
 Você pode, no entanto, pedir ao R Markdown para monitorar se um pedaço de código foi modificado e apenas re-executar este pedaço. Isso é chamado **caching** do pedaço de código.
 
@@ -342,16 +340,15 @@ lm(Hwt ~ Bwt, data=cats)
 ```
 
 A questão é que um pedaço de código que não se alterou pode invocar
-resultados de pedaços anteriores, trechos modificados, e então nós _precisarIIIamos re-executar os pedaços desatualizados. Existem opções para informar manualmente o R Markdown que "este trecho depende desse fragmento anterior", mas geralmente é mais fácil deixar ele mesmo cuidar disso, definindo a opção `autodep = TRUE`.
+resultados de pedaços anteriores, trechos modificados, e então nós precisaríamos re-executar os pedaços desatualizados. Existem opções para informar manualmente ao R Markdown que um trecho de código depende de um fragmento anterior. Mas, convenientemente, é mais fácil deixar ele mesmo cuidar disso definindo a opção `autodep = TRUE`.
 
 1. Se você carregar um pacote com os comandos `library()` ou `require()`, o R
- Markdown não é inteligente o suficiente para verificar se o pacote mudou (ou realmente foi instalado, se você sem ele instalado). Então isso não vai lançar uma re-execução automática de um pedaço de código em cache.
-2. Para forçar manualmente a re-execução de todos os pedaços de código, o mais fácil de fazer é excluir o diretório que o R Markdown cria (algo como 
-   _filename_`_cache`) para armazenar o estado de todos os pedaços de código.
+ Markdown não é inteligente o suficiente para verificar se o pacote mudou (ou realmente foi instalado, se você não o tem instalado). Então isso não vai lançar uma re-execução automática de um pedaço de código em cache.
+2. Para forçar manualmente a re-execução de todos os pedaços de código, o mais fácil de fazer é excluir o diretório que o R Markdown cria (algo como _filename_`_cache`) para armazenar o estado de todos os pedaços de código.
    
 ### Configuração de padrões para todos os pedaços de código
 
-Você pode dizer para o R definir alguns padrões para se aplicar a todos os pedaços onde você não faz especificamente sobrecarregá-los. Aqui estão os que eu geralmente uso:   
+Você pode dizer para o R definir alguns padrões para se aplicar a todos os pedaços de código. Aqui estão os que eu geralmente uso:   
 
 ```{r, eval=FALSE}
 # Precisamos do pacote knitr para definir opções de trechos de código
@@ -384,13 +381,13 @@ Veja em [http://yihui.name/knitr/options/] para obter uma listagem completa das 
 
 # Matemática no R Markdown
 
-Como esta é uma aula de Estatística, é importante que você seja capaz de escrever expressões matemáticas, muitas vezes longas séries delas. O R Markdown oferece a sintaxe para tornar fórmulas e derivações matemáticas complexas, e exibi-las _muito_ lindamente. Assim como o código,a fórmula matemática pode ser *inline* ou como (**apresentações**). 
+Como esta é uma aula de Estatística, é importante que você seja capaz de escrever expressões matemáticas, muitas vezes longas séries delas. O R Markdown oferece sintaxe para gerar fórmulas e derivações matemáticas complexas, e exibi-las _muito_ lindamente. Assim como o código,a fórmula matemática pode ser *inline* ou como (**apresentações**). 
 
-O código da fórmula matemática *inline* é marcado com um par de cifrão
+O código da fórmula matemática *inline* é marcado com um par de cifrões
 (`$`), as $\pi r^2$ or $e^{i\pi}$.
 
 ```
-O código de matemática inline é marcado com um par de cifrão
+O código de matemática inline é marcado com um par de cifrões
 (`$`), as $\pi r^2$ or $e^{i\pi}$.
 ```
 
@@ -407,11 +404,11 @@ e^{i \pi} = -1
 ```
 
 Uma vez que seu texto está no modo matemático, o R Markdown faz o trabalho de
-converter seu texto matemático para um programa diferente, chamado LaTeX[^latex].
-Ele é o sistema mais comum para a composição de documentos matemáticos
-em todas as ciências, e tem sido há décadas. Ele é extremamente poderoso,
-estável, disponível basicamente em todos as plataformas e completamente gratuito. 
-Mas isso também o torná-lo, em seu poder total, muito complicado. Felizmente, para nossos propósitos, é bastante simples. 
+convertê-lo para um padrão diferente chamado LaTeX[^latex].
+Ele é o sistema mais usado para a elaboração de documentos matemáticos
+nas Ciências, e tem sido há décadas. Ele é extremamente poderoso,
+estável, gratuito e está disponível em praticamente todas as plataformas. 
+Mas em seu poder total, ele pode ser um tanto complicado. Felizmente, para nossos propósitos, é bastante simples. 
 
 
 ### Elementos do Modo Matemático
@@ -419,7 +416,7 @@ Mas isso também o torná-lo, em seu poder total, muito complicado. Felizmente, 
 * A maioria das letras será renderizada em itálico (compare: a vs. `a` vs. $a$; apenas
 o último está em modo matemático). O espaçamento entre as letras também segue as convenções da matemática, então não a trate como só outra maneira de obter itálico. (Compare _speed_, em itálico simples, com $speed$, no modo matemático.)
 * Letras gregas podem ser acessadas com a barra na frente de seus nomes, como `\alpha` para $\alpha$. Fazer a primeira letra em maiúscula te dá a letra maiúscula, como em `\Gamma` para $\Gamma$ vs. `\gamma` para $\gamma$. (As maiúsculas alpha e beta são as mesmas que as Romanas A e B, portanto, não precisa de comando especial para elas.)
-* Existem outros comandos "cortados" (ou "escapados") para outros símbolos matemáticos:
+* Existem outros comandos "cortados" (ou "escapados") para alguns símbolos matemáticos:
     + `\times` para $\times$
     + `\cdot` para $\cdot$
     + `\leq` e `\geq` para $\leq$ and $\geq$
@@ -427,7 +424,7 @@ o último está em modo matemático). O espaçamento entre as letras também seg
     + `\leftarrow`, `\rightarrow`, `\Leftarrow`, `\Rightarrow` para $\leftarrow$, $\rightarrow$, $\Leftarrow$, $\Rightarrow$
     + `\approx`, `\sim`, `\equiv` for $\approx$, $\sim$, $\equiv$
     + Veja, também, http://web.ift.uib.no/Teori/KURS/WRK/TeX/symALL.html para uma
-lista completa dos símbolos.  (http://tug.ctan.org/info/symbols/comprehensive/symbols-a4.pdf lista de _todos_ os símbolos disponíveis no `LaTeX`, incluindo muitos caracteres especiais não-matemáticos)
+lista completa dos símbolos.  (http://tug.ctan.org/info/symbols/comprehensive/symbols-a4.pdf - lista de _todos_ os símbolos disponíveis no `LaTeX`, incluindo muitos caracteres especiais não-matemáticos)
 * Subscritos vêm depois de um caractere underscore, `_`, e sobrescritos vêm depois de um circunflexo, `^`, como `\beta_1` para $\beta_1$ ou `a^2` para $a^2$.
 * As chaves são usadas para criar agrupamentos que devem ser mantidos em conjunto, como, por exemplo, `a_{ij}` para $a_{ij}$ (vs. `a_ij` para $a_ij$).
 * Se você precisa de algo em fonte normal (romana) no modo matemático, use `\mathrm`, como `t_{\mathrm{in}}^2` para $t_{\mathrm{in}}^2$.
@@ -458,7 +455,7 @@ produz
 \[
 \frac{a+b}{b} = 1 + \frac{a}{b}
 \]
-* Somas podem ser escritas como:
+* Somatórios podem ser escritos como:
 ```
 \sum_{i=1}^{n}{x_i^2}
 ```
@@ -475,7 +472,7 @@ n! = \prod_{i=1}^{n}{i}
 \log{b} - \log{a} = \int_{x=a}^{x=b}{\frac{1}{x} dx}
 \]
 `\sum`, `\prod` and `\int` se ajustam automaticamente ao tamanho da expressão a qual são somados, multiplicados ou integrados.
-* "Delimitadores", como parênteses ou chaves, podem se redimensionar automaticamente para corresponder ao que eles têm ao redor.   Para fazer isso, você precisa usar `\left` e `\right`,como
+* "Delimitadores", como parênteses ou chaves, podem se redimensionar automaticamente para corresponder ao que eles têm ao redor. Para fazer isso, você precisa usar `\left` e `\right`, como
 ```
 \left( \sum_{i=1}^{n}{i} \right)^2 = \left( \frac{n(n-1)}{2}\right)^2 = \frac{n^2(n-1)^2}{4}
 ```
