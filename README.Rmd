@@ -42,7 +42,7 @@ output:
 * Matemática no R Markdown
     * Elementos da Matemática <!-- Elements of Math Mode
     * Matemática para ```LaTeX```
-    * ```LaTeX``` não verifica corretude
+    * ```LaTeX``` não verifica a correção
     * Mais recursos avançados de Matemática: Novos Comandos
     * Instalando ```LaTeX```
 * Juntando tudo: Escrevendo seu Relatório em R Markdown
@@ -482,7 +482,7 @@ será renderizado como
 \]
    + Para usar chaves como delimitadores, anteceda-os com barras como `\{` e `\}` para $\{$ e $\}$.
 * Múltiplas equações, com seus sinais iguais alinhados, podem ser criadas
-usando `eqnarray`, da seguinte forma:
+usando `eqnarray` da seguinte forma:
 ```
 \[
 \begin{eqnarray}
@@ -500,7 +500,7 @@ Y & \sim & \chi^2_{n-p}\\
 R & \equiv & X/Y \sim t_{n-p}
 \end{eqnarray}
 \]
-Observe que `&` envolve o que se passa no meio em cada linha e cada linha (exceto a última) é encerrada com `\\`. O lado esquerdo ou direito da equação pode estar em branco que o espaço será feito:
+Observe que `&` envolve o que se passa no meio em cada linha, e cada linha (exceto a última) é encerrada com `\\`. O lado esquerdo ou direito da equação pode estar em branco que o espaço será feito:
 ```
 \[
 \begin{eqnarray}
@@ -519,26 +519,24 @@ P(|X-\mu| > k) & = & P(|X-\mu|^2 > k^2)\\
 \end{eqnarray}
 \]
 
-(Resumindamente `LaTeX`, `\begin{eqnarray}` entra automaticamente no modo matemático, mas o R Markdown precisa de um empurrãozinho.)
+(Resumidamente o `LaTeX`, `\begin{eqnarray}` entra automaticamente no modo matemático, mas o R Markdown precisa de um empurrãozinho.)
 
 ### Traduzindo Matemática para `LaTeX`
 
 O `LaTeX` é projetado para que cada parte de uma expressão matemática tenha uma
-relação razoavelmente <-- direta ao que você escreve. Ainda assim, ele pode ser um
-um pouco intimidador no início. O que muitas pessoas acham útil é começar com
-alguma página com código matemático impresso ou manuscrito e depois traduzi-la,
-linha por linha, no `LaTeX`, processando para ver se ele saiu
-direito (e, caso contrário, entender onde consertar coisas). Se você precisa fazer expressões matemáticas para um
-trabalho, pode ser uma boa ideia escrever as contas à mão e depois aproveitá-lo 
-no `LaTeX`, se a aula o exige (como este), ou não.
-Eventualmente, com a prática, a tradução se tornará fluida e automática.
+relação razoavelmente direta ao que você escreve. Ainda assim, ele pode ser um
+um pouco intimidador no início. O que muitas pessoas acham útil é começar copiando alguma página
+com código matemático impresso ou manuscrito para o `LaTeX`, renderizando e vendo como fica o resultado. 
+Se você precisa fazer expressões matemáticas para um trabalho, pode ser uma boa ideia escrever à mão e depois aproveitar para usar 
+o `LaTeX`.
+Eventualmente, com a prática, a transcrição se tornará fluida e automática.
 Algumas pessoas inovam ainda a matemática escrevendo no `LaTeX`.
 
 ### `LaTeX` não verifica a correção
 
-`LaTeX` não verifica se sua matemática está _certa_; ele apenas verifica se
-descobre o que você está tentando dizer bem o suficiente para digitar e configurá-lo.
-Assim, por exemplo, não tem nenhum problema com o seguinte:
+`LaTeX` não verifica se suas expressões estão _certas_; ele apenas verifica sintaticamente e reproduz o que você está expressa.
+Ele obedece às suas ordens, basicamente, e executa o que conseguir.
+Então, por exemplo, não tem nenhum problema com o seguinte:
 
 \[
 \begin{eqnarray}
@@ -550,10 +548,8 @@ n^2 -1 & = & n^2\\
 \end{eqnarray}
 \]
 
-(Existem programas de computador para matemática simbólica que, de fato,
-verifique se sua operação matemática está correta, pelo menos se você estiver trabalhando na sub-área
-de matemática a qual eles são projetados para lidar. Até onde eu sei, ninguém realmente
-os combinou com `LaTeX`.)
+(E existem programas para matemática simbólica que, de fato,
+verificam se suas operações matemáticas são satisfazíveis — pelo menos se você estiver trabalhando no ramo da matemática a qual eles são projetados para lidar. Até onde eu sei, ninguém realmente os combinou com `LaTeX`.)
 
 # Para avançar em R Markdown...
 
@@ -561,15 +557,15 @@ Para maiores informações sobre o R Markdown, o melhor site é [http://rmarkdow
 
 Para maiores informações sobre o `LaTeX`, sugerimos o livro do Leslie Lamport, _LaTeX: A Document Preparation System_ (2nd ed., Reading, Mass.: Addison-Wesley, 1994).
 
-[_LaTeX_](https://en.wikibooks.org/wiki/LaTeX), do Wikibooks é bastante acessível.
+[_LaTeX_](https://en.wikibooks.org/wiki/LaTeX), do Wikibooks também é bastante útil.
 
-R Markdown é baseado no pacote `knitr` desenvolvido pelo Yihui Xie. Para integrar o R com o `LaTeX`; veja o site http://yihui.name/knitr/, a documentação está no livro do Yihui Xie _Dynamic Documents with R and knitr_ (2nd edition, Boca Raton, Florida; CRC Press, 2016).
+O R Markdown é baseado no pacote `knitr` desenvolvido pelo Yihui Xie. Para integrar o R com o `LaTeX`; veja o site http://yihui.name/knitr/. A documentação está no livro de Yihui Xie: _Dynamic Documents with R and knitr_ (2nd edition, Boca Raton, Florida; CRC Press, 2016).
 
 Um texto com a explicação de como o Word não é muito eficiente como processador de texto pode ser encontrado aqui. "The word processor is a stupid and grossly inefficient tool for preparing text for communication with others" [http://ricardo.ecn.wfu.edu/~cottrell/wp.html](http://ricardo.ecn.wfu.edu/~cottrell/wp.html).
 
 
 
-#### Biografia dos autores:
+#### Biografia dos co-autores e tradutores dessa versão:
 
 **Steven Dutt-Ross**<br>
 <br>
