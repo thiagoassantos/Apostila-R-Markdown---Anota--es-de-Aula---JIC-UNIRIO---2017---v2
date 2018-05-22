@@ -1,5 +1,5 @@
 ---
-title: "Uso R Markdown para aula de Estatística da UNIRIO"
+title: "Usando R Markdown para anotações de aula"
 author: "Steven Dutt Ross & Thiago de Araújo"
 output: 
    html_document:
@@ -63,7 +63,9 @@ Correções e sugestões são bem-vindas.
 
 # Mark Up, Markdown
 
-Provavelmente você esteja acostumado a usar programas de processamento de texto, como o *Microsoft Word*, que empregam o princípio do "o que você vê é o que você obtém" (WYSIWYG): você deseja que algumas palavras sejam impressas em itálico e, com um clique, logo estão em itálico na tela. Você quer que outras palavras tenham uma fonte maior e diferente, então basta apenas selecionar a fonte, seu tamanho e assim por diante. Isso funciona bem o suficiente para <del>n00bs</del> leigos, mas não é uma base viável para um sistema de formatação de texto porque depende de um programa específico: 1 - saber o que você quer dizer e 2 implementá-lo da maneira que ele pode. Durante várias décadas, os sistemas realmente sérios de escrita basearam-se em um princípio muito diferente — marcação de texto. A ideia essencial em uma **linguagem de marcação** é que ela trabalha em texto comum, além de sinais que indicam como alterar a formatação ou o significado do texto. Algumas linguagens de marcação, como o HTML (*Hyper-Text Markup Language*) utilizam uma sintaxe muito técnica; outras, como o nosso **Markdown**, são mais sutis. Por exemplo, as frases anteriores no **Markdown** se parecem com isto:
+Provavelmente você esteja acostumado a usar programas de processamento de texto, como o *Microsoft Word*, que empregam o princípio do "o que você vê é o que você obtém" (WYSIWYG): você deseja que algumas palavras sejam impressas em itálico e, com um clique, logo estão em itálico na tela. Você quer que outras palavras tenham uma fonte maior e diferente, então basta apenas selecionar a fonte, seu tamanho e assim por diante. Isso funciona bem o suficiente para <del>n00bs</del> leigos, mas não é uma base viável para um sistema de formatação de texto porque depende de um programa específico: 1 - saber o que você quer dizer e 2 implementá-lo da maneira que ele pode. 
+
+Durante várias décadas, os sistemas realmente sérios de escrita basearam-se em um princípio muito diferente — marcação de texto. A ideia essencial em uma **linguagem de marcação** é que ela trabalha em texto comum, além de sinais que indicam como alterar a formatação ou o significado do texto. Algumas linguagens de marcação, como o HTML (*Hyper-Text Markup Language*) utilizam uma sintaxe muito técnica; outras, como o nosso **Markdown**, são mais sutis. Por exemplo, as frases anteriores no **Markdown** se parecem com isto:
 
 ```
 Durante várias décadas, os sistemas realmente sérios de escrita basearam-se em um princípio muito diferente — marcação de texto. A ideia essencial em uma **linguagem de marcação** é que ela trabalha em texto comum, além de sinais que indicam como alterar a formatação ou o significado do texto. Algumas linguagens de marcação, como o HTML (*Hyper-Text Markup Language*) utilizam uma sintaxe muito técnica; outras, como o nosso **Markdown**, são mais sutis.
