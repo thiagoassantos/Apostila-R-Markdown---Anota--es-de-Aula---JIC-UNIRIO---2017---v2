@@ -160,6 +160,7 @@ um sinal de crase, sem quebras de linha no texto. (Por exemplo, `R` vs. R.)
 1. As linhas que começam com um número (de 0--9), seguido de um texto, serão interpretadas como itens em uma lista enumerada.
 2. Dependendo do seu editor de texto, o R Markdown lidará completará a numeração automaticamente conforme se quebra linhas.
 3. Isso pode ser útil quando você perde a contagem ou não atualiza os números sozinho ao editar. (Consulte atentamente o arquivo .Rmd para este item.)
+
     a. Você pode criar sub-listas de listas enumeradas com letras para cada sub-item.
     b. No entanto, atente-se para a sintaxe e organização do seu código.
 
