@@ -269,32 +269,31 @@ with(cats, cor(Hwt, Bwt))
 
 ### Código *Inline*
 
-A saída do seu código também pode ser incorporada no texto, usando o modo **inline**. Este é o código usado apenas em uma linha, começando com
-` `r ` e terminando com ` ` `. Usar o código inline é como este documento consegue saber que o conjunto de dados `cats` contém linhas `r nrow (cats)` (` contém ` r nrow(gatos) ` linhas `), e que o peso médio dos corações das fêmeas dos gatos é `r median(cats$Hwt[cats$Sex=="F"])` gramas (` `r median(cats$Hwt[cats$Sex=="F"])` `).
+A saída do seu código R também pode ser incorporada no texto usando o modo **inline**. Isto permite usar p código em apenas uma linha, começando com ` `r ` e terminando com ` ` `. Por exemplo, usando o código inline é como este documento consegue saber que o conjunto de dados `cats` contém linhas `r nrow (cats)` (` contém ` r nrow(gatos) ` linhas `), e que o peso médio dos corações das fêmeas dos gatos é `r median(cats$Hwt[cats$Sex=="F"])` gramas (` `r median(cats$Hwt[cats$Sex=="F"])` `).
 
 Observe que o código inline não exibe os comandos executados, apenas a saída deles.
 
 ### Visto, mas não ouvido
 
-Os pedaços de código (exceto código inline) podem ter um monte de **opções** que modificam a forma como eles são executados e como eles aparecem no documento. Estas opções vão depois o `r` inicial e antes do fechamento `}` que representa o início de um pedaço código.  Uma das opções mais comuns desativa a impressão do código, porém, deixa os resultados isolados:
+Os pedaços de código (exceto código inline) podem ter **opções extras** que modificam o comportamento naquele trecho. Estas opções vão depois do `{r` inicial e antes do fechamento `}` — que representa o início de um pedaço código. Por exemplo, uma das opções mais comuns desativa a impressão do código, exibindo apenas os resultados:
  ` ```{r, echo=FALSE} `
 
 Outra opção executa o código, mas não inclui nem o texto do código nem a saída.
  ` ```{r, include=FALSE} `
-Isso pode parecer bobo, mas pode ser útil para pedaços de código que *configuram como carregar arquivos de dados*, ou estimativas do modelo inicial, etc.
+Isso parece bobo, mas pode ser útil para pedaços de código que *configuram/carregam arquivos de dados*, ou estimativas do modelo inicial etc.
 
 Outra opção imprime o código no documento mas não o executa:
  ` ```{r, eval=FALSE} `
-Isso também é útil se você quiser comentar sobre o código (de modo que ele fique bem formatado).
+Isso também é útil se você quiser comentar sobre o código (de modo que ele fique bem explicado).
 
 ### Nomeando pedaços de código
 
-Você pode atribuir nomes aos pedaços de código logo após a abertura, como
-` ``` {r, nomeinteligente} `. Esse nome é usado para as imagens (ou outros arquivos) que são gerados quando o documento é processado.
+Você pode atribuir nomes aos pedaços de código logo após a criação, como
+` ``` {r, nomeinteligente} `. Esse nome é usado para as imagens (entre outros arquivos) que são gerados quando o documento é processado.
 
 ### Alterando tamanhos de imagem e alinhamentos
 
-Há muitas opções para ajustar a colocação das figuras que o
+Há muitas opções para ajustar a inserção das figuras que o
 R produz. `fig.align` controla o **alinhamento** horizontal (esquerda, direita, ou centro).
 
 Ao produzir PDF, as opções `out.height` e` out.width` permitem que você especifique a altura ou largura desejada da figura em polegadas, centímetros ou múltiplos de comprimentos pré-definidos (do `LaTeX`). Então, por exemplo, ` ``` r,
